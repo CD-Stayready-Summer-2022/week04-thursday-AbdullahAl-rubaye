@@ -1,5 +1,7 @@
 package com.codedifferently.problem01;
 
+import static sun.security.ssl.NamedGroup.NamedGroupType.arrayContains;
+
 public class Solution {
     /**
      * You will be given an array of numbers, search the array and return the longest
@@ -11,6 +13,17 @@ public class Solution {
      * @return
      */
     public String findLongestConsecutiveSet(Integer[] allNumbers){
-        return null;
-    }
-}
+
+            int longestStreak = 0;
+
+            for (int numb : allNumbers) {
+                int currentNum = numb;
+                int currentStreak = 1;
+                if((arrayContains(allNumbers, currentNum + 1))){
+                longestStreak = Math.max(longestStreak, currentStreak);
+            }
+            }
+            return longestStreak;
+        }
+
+     }
